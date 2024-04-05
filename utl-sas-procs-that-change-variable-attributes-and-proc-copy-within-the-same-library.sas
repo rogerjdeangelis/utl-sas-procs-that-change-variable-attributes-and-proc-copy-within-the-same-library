@@ -40,14 +40,14 @@ https://github.com/rogerjdeangelis/utl-sas-procs-that-change-variable-attributes
 /* SEX      Char    1  $1.       $2.     Student Sex  |                                          |                                   */
 /*                                                    |                                          |                                   */
 /*----------------------------------------------------|------------------------------------------|-----------------------------------*/
-/*                                                    |                                          |                                   */
+/*                                                    |                                          | Change attributes                 */
 /*                                                    | 2. CHANGE ATTRIBUTES (SORT)              | Variable Format Informat Label    */
 /*                      Remove these                  |                                          |                                   */
 /*                      ============================= | proc sort data=class out=classSrt;       | SEX      $32.     $99.   New Sex  */
 /*  Variable Type  Len  Format  Informat  Label       | format age best.; format sex $32.;       | AGE      BEST.    F9.    New Age  */
 /*                                                    | informat age 9.; informat sex $99.;      |                                   */
 /*  AGE      Num     8  3.        4.      Student Age | label age="New Age";                     |                                   */
-/*  SEX      Char    1  $1.       $2.     Student Sex | label sex="New Sex";                     |                                   */
+/*  SEX      Char    1  $1.       $2.     Student Sex | label sex="New Sex";                     |  Remove Attributes                */
 /*                                                    | by sex;                                  |  DataSet Name: WORK.CLASSSRT      */
 /*                                                    | run;quit;                                |                                   */
 /*                                                    |                                          |  Variable Type Len                */
@@ -62,7 +62,7 @@ https://github.com/rogerjdeangelis/utl-sas-procs-that-change-variable-attributes
 /*----------------------------------------------------|------------------------------------------|-----------------------------------*/
 /*                                                    |                                          |                                   */
 /*                                                    | 3. PROC COPY IN & OUT IN SAME LIBRARY    |                                   */
-/*                                                    |                                          |                                   */
+/*                                                    |                                          | Copy in same library              */
 /*                                                    | proc datasets lib=work nodetails nolist; |     NAME           TYPE  OBS VARS */
 /*                                                    |   delete copy_in_same_library;           |                                   */
 /*                                                    | run;quit;                                | WORK.CLASS          DATA   3   2  */
