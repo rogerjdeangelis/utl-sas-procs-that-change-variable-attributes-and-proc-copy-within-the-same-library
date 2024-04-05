@@ -51,9 +51,9 @@ Sas procs that change variable attributes and proc copy within the same library
     /*  AGE      Num     8  3.        4.      Student Age | label age="New Age";                     |                                   */
     /*  SEX      Char    1  $1.       $2.     Student Sex | label sex="New Sex";                     |                                   */
     /*                                                    | by sex;                                  |  DataSet Name: WORK.CLASSSRT      */
-    /*                                                    | run;quit;                                |                                   */
+    /*                                                    | run;quit;                                |  Attributes removed               */
     /*                                                    |                                          |  Variable Type Len                */
-    /*                                                    |    CHANGE ATTRIBUTES (REPORT)            |                                   */
+    /*                                                    |    REMOVE ATTRIBUTES (REPORT)            |                                   */
     /*                                                    | proc report data=class out=classrpt;     |  SEX      Char   1                */
     /*                                                    | format _numeric_; format _character_;    |  AGE      Num    8                */
     /*                                                    | informat _numeric_;informat _character_; |                                   */
@@ -63,7 +63,7 @@ Sas procs that change variable attributes and proc copy within the same library
     /*                                                    |                                          |                                   */
     /*----------------------------------------------------|------------------------------------------|-----------------------------------*/
     /*                                                    |                                          |                                   */
-    /*                                                    | 3. PROC COPY IN & OUT IN SAME LIBRARY    |                                   */
+    /*                                                    | 3. PROC COPY IN & OUT IN SAME LIBRARY    |  Dataset copied in same library   */
     /*                                                    |                                          |                                   */
     /*                                                    | proc datasets lib=work nodetails nolist; |     NAME           TYPE  OBS VARS */
     /*                                                    |   delete copy_in_same_library;           |                                   */
